@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Stockroom Kids — демо</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Ctext x='16' y='22' font-size='16' font-family='Segoe UI' font-weight='700' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<style>[data-export],a[href^="/api/export"]{display:none!important}</style>
+</head>
+<body>
+  <div id="login-screen" class="login-wrap">
+    <div class="login-card">
+      <div class="brand">
+        <div class="brand-mark">SK</div>
+        <div>
+          <div class="brand-name">Stockroom Kids</div>
+          <div class="brand-sub">Учёт товаров, закупок и продаж</div>
+        </div>
+      </div>
+      <h1 class="section-gap">Вход в систему</h1>
+      <p class="muted small">Введите логин и пароль, выданные владельцем магазина.</p>
+      <form id="login-form" class="section-gap" autocomplete="on">
+        <label class="field">
+          <span class="field-label">Логин</span>
+          <input class="input" name="login" autocomplete="username" required autofocus>
+        </label>
+        <label class="field section-gap">
+          <span class="field-label">Пароль</span>
+          <input class="input" name="password" type="password" autocomplete="current-password" required>
+        </label>
+        <div id="login-error" class="error-box section-gap" hidden></div>
+        <button class="btn btn-primary btn-block section-gap" type="submit">Войти</button>
+        <div class="demo-hint">
+          <div class="demo-hint-title">Демо-доступ</div>
+          <div><b>owner</b> / Owner#2026 — владелец, полный доступ</div>
+          <div><b>buyer</b> / Buyer#2026 — закупщик в Китае</div>
+          <div><b>admin</b> / Admin#2026 — администратор, ограниченный доступ</div>
+        </div>
+        <style>
+          .demo-hint { margin-top: 18px; padding: 12px 14px; border-radius: 10px; background: #f8fafc; border: 1px solid #e4e7ec; font-size: 13px; color: #475467; line-height: 1.6; }
+          .demo-hint-title { font-weight: 700; color: #101828; margin-bottom: 4px; }
+        </style>
+      </form>
+      <p class="muted small section-gap">Доступ разграничен по ролям: владелец, закупщик, продавец.</p>
+    </div>
+  </div>
+
+  <div id="shell" hidden>
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">SK</div>
+        <div>
+          <div class="brand-name">Stockroom Kids</div>
+          <div class="brand-sub">Учёт магазина</div>
+        </div>
+      </div>
+      <nav id="nav-links"></nav>
+      <div class="sidebar-footer">
+        <div class="user-box" id="user-box"></div>
+        <button type="button" class="btn btn-sm btn-block" id="logout-btn">Выйти</button>
+      </div>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <button type="button" class="btn btn-icon hamburger" id="hamburger" aria-label="Открыть меню">☰</button>
+        <span class="page-title" id="page-title">Главная</span>
+        <div class="spacer"></div>
+      </header>
+      <main class="content" id="content"></main>
+    </div>
+  </div>
+
+  <div id="toast-root"></div>
+  <script src="demo.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
